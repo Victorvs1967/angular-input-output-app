@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Habit } from './models/habit';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-input-output-app';
+
+  public formOpen = false;
+  public editHabit?: Habit;
+
+  onAdding() {
+    this.formOpen = true;
+  }
+
+  onEditing(habit: Habit) {
+    this.editHabit = habit;
+    this.formOpen = true;
+  }
+
+  closeForm() {
+    this.formOpen = false;
+    this.editHabit = null ?? new Habit();
+  }
+
 }
