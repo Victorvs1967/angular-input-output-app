@@ -12,11 +12,12 @@ export class HabitsListComponent implements OnInit {
   @Output()
   addEvent = new EventEmitter();
   @Output()
-  editEvent = new EventEmitter();
+  editEvent = new EventEmitter<Habit>();
 
   public habits?: Habit[];
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
     this.habits = HABITS;

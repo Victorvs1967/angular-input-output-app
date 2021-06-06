@@ -12,7 +12,6 @@
 <!-- Habits List -->
 <ng-template #habitsList>
   <app-habits-list
-    *ngIf="!formOpen"
     (addEvent)="onAdding()"
     (editEvent)="onEditing($event)"
   >

@@ -22,7 +22,7 @@ export class AppComponent {
 
   closeForm() {
     this.formOpen = false;
-    this.editHabit = null ?? new Habit();
+    this.editHabit = null ?? undefined;
   }
 
 }

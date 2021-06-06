@@ -18,18 +18,21 @@ export class HabitFormComponent implements OnInit {
 
   public habits?: Habit[];
   public editingIndex?: number;
+
   public habitForm = new FormGroup({
     name: new FormControl(null),
     frequency: new FormControl(null),
     description: new FormControl(null),
   });
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
     this.habits = HABITS;
 
     if (this.habit) {
+      console.log(this.habit);
       this.editingIndex = this.habits.indexOf(this.habit);
       this.setEditForm(this.habit);
     }
